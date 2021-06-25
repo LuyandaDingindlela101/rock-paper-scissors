@@ -16,13 +16,91 @@ body {
      font-family: 'Roboto', sans-serif;
 }
 
+.logo {
+     top: 20px;
+     left: 20px;
+     height: 60px;
+     position: absolute;
+}
+
 .container h1 {
      font-size: 30px;
+     text-align: center;
+     margin-bottom: 100px;
      color: var(--primary-color);
 }
 
 .game-container {
-     width: 90%;
+     display: flex;
      margin: 0 auto;
-     max-width: 1200px;
+     max-width: 1300px;
+     text-align: center;
+     align-items: flex-start;
+     justify-content: space-between;
+}
+
+.game-container .left-container,
+.game-container .right-container {
+     width: 45%;
+     min-height: 350px;
+     padding-top: 20px;
+     border: 1px solid grey;
+}
+
+.game-container .left-container .image-container img,
+.game-container .right-container .image-container img {
+     width: 100%;
+     margin-bottom: 50px;
+}
+
+.game-container h3 {
+     font-size: 25px;
+     font-weight: 100;
+}
+
+.game-container h4 {
+     font-size: 30px;
+}
+
+.game-container .left-container .options-container {
+     display: flex;
+     align-items: center;
+     justify-content: space-around;
+}
+
+.game-container .left-container .options-container .btn {
+     width: 50px;
+     height: 50px;
+     border: none;
+     padding: 10px;
+     display: grid;
+     cursor: pointer;
+     border-radius: 50%;
+     place-content: center;
+     background: var(--primary-color);
+     transition: transform .5s ease-in-out;
+}
+
+.game-container .left-container .options-container .btn:hover {
+     transform: scale(1.1);
+}
+.game-container .left-container .options-container .btn img {
+     width: 35px;
+     height: 35px;
+     margin-bottom: 0;
+}
+
+.game-container .right-container .image-container img {
+     transform: scaleX(-1);
+}
+
+.countdown {
+     top: 50%;
+     left: 50%;     
+     display: none;
+     font-weight: 700;
+     font-size: 100px;
+     position: absolute;
+     color: var(--primary-color);
+     transform: translate(-50%, -50%);
 }

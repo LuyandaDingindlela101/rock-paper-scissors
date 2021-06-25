@@ -3,17 +3,18 @@
 <head>
      <meta charset="UTF-8">
      <title>Rock Paper Scissor</title>
+     <link rel="shortcut icon" href="./images/logo.png" type="image/x-icon">
      <meta http-equiv="X-UA-Compatible" content="IE=edge">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <!-- 3RD PARTY STYLESHEETS -->
      <link rel="preconnect" href="https://fonts.googleapis.com">
      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">     
      <!-- MY STYLESHEETS -->
      <link rel="stylesheet" href="./styles/main.css">
 </head>
 <body>
-     <img src="./images/logo.png" alt="Luyanda Dingindlela logo">
+     <img class="logo" src="./images/logo.png" alt="Luyanda Dingindlela logo">
      <section class="container">
           <h1>ROCK, PAPER, SCISSORS</h1>
           <div class="game-container">
@@ -24,13 +25,13 @@
                          <img src="./images/rock.png" alt="fist image">
                     </div>
                     <div class="options-container">
-                         <button class="rock-btn">
+                         <button class="rock-btn btn">
                               <img src="./images/fist_icon.png" alt="hand rock icon">
                          </button>
-                         <button class="paper-btn">
+                         <button class="paper-btn btn">
                               <img src="./images/paper_icon.png" alt="hand paper icon">
                          </button>
-                         <button class="scissors-btn">
+                         <button class="scissors-btn btn">
                               <img src="./images/scissors_icon.png" alt="hand scissors icon">
                          </button>
                     </div>
@@ -43,6 +44,7 @@
                     </div>
                </div>
           </div>
+          <h2 class="countdown">ROCK...</h2>
      </section>
 </body>
 </html>
