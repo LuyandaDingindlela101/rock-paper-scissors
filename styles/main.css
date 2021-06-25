@@ -1,0 +1,28 @@
+:root {
+     --primary-color: #e62649;
+}
+
+*, *::before, *::after {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+}
+
+body {
+     width: 100%;
+     display: grid;
+     min-height: 100vh;
+     place-content: center;
+     font-family: 'Roboto', sans-serif;
+}
+
+.container h1 {
+     font-size: 30px;
+     color: var(--primary-color);
+}
+
+.game-container {
+     width: 90%;
+     margin: 0 auto;
+     max-width: 1200px;
+}
