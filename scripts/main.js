@@ -1,4 +1,4 @@
-const moves_list = ["ROCK", "PAPER", "SCISSORS"];
+const moves_list = ["rock", "paper", "scissor"];
 
 let user_move = "";
 let rock_btn = document.querySelector(".rock-btn");
@@ -7,42 +7,60 @@ let countdown_text = document.querySelector(".countdown");
 let scissors_btn = document.querySelector(".scissors-btn");
 
 rock_btn.addEventListener("click", () => {
-     user_move = "rock";
-     computer_move = getComputerMove();
+     let user_move = "rock";
+     let computer_move = getComputerMove();
 
-     console.log(computer_move);
+     let winner = checkWinner(user_move, computer_move);
+     console.log(winner);
+     // displayWinner(winner);
+     //   UPDATE SCORE CARD
 });
 
-function countdown () {
-     let timer;
-     //   CREATE A LIST OF THE MOVES THAT WILL ACT AS THE TIMER
-     //   GET THE countdown_text ELEMENT
-     let countdown_text = document.querySelector(".countdown");
 
-     //   CHANGE THE countdown_text STYLE FROM DISPLAY: NONE TO DISLAY BLOCK
-     countdown_text.style.display = "block";
-
-     //   NOW, WE LOOP THROUGH THE move_list 
-     moves_list.forEach(move => {
-          //   WE SET AN INTERVAL OF ONE SECOND 
-          timer = setInterval(function() { 
-               console.log("rund");
-               console.log(move);
-               //   UPDATE THE VALUE OF THE countdown TO EQUAL THE move
-               countdown.textContent = move;
-          }, 1000);
-     });
-
-     clearInterval(timer); 
-}
-
+//  FUNCTION WILL RETURN THE COMPUTERS MOVE
 function getComputerMove () {
+     //   GET A RANDOM NUMBER BETWEEN 0 - 10
      random_number = Math.floor((Math.random() * 10) + 1);
      console.log(random_number);
-     if (0 <= random_number <= 3) {
-          console.log(moves_list[random_number]);
-          return moves_list[random_number];          
-     } else {
+     //   CHECK IF THE NUMBER IS MORE THAN 2 OR NOT
+     while (random_number > 2) {
+          //   IF IT IS, CALL THE getComputerMove() FUNCTION
           getComputerMove();
      }
+     //   GET THE MOVE FROM THE moves_list AT THE INDEX OF THE random_number
+     return moves_list[random_number];          
+}
+
+//   FUNCTION WILL CHECK FOR A TIE AND A WINNER
+function checkWinner(user_move, computer_move) {
+     console.log(user_move, computer_move);
+     //   THIS TAKES CARE OF ALL THE TIES
+     if (user_move == computer_move) {
+          return "tie";
+     } 
+
+     //   IF THE USER PLAYS ROCK
+     if (user_move == "rock" && computer_move == "paper") {
+          return "computer";
+     } else if (user_move == "rock" && computer_move == "scissor") {
+          return "user";
+     }
+     
+     //   IF THE USER PLAYS PAPER
+     if (user_move == "paper" && computer_move == "rock") {
+          return "user";
+     } else if (user_move == "paper" && computer_move == "scissor") {
+          return "computer";
+     }
+     
+     //   IF THE USER PLAYS SCISSOR
+     if (user_move == "scissor" && computer_move == "rock") {
+          return "computer";
+     } else if (user_move == "scissor" && computer_move == "paper") {
+          return "user";
+     }
+}
+
+function displayWinner() {
+
 }
