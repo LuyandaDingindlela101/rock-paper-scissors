@@ -44,6 +44,7 @@ body {
 .game-container .left-container,
 .game-container .right-container {
      width: 45%;
+     overflow: hidden;
      min-height: 350px;
      padding-top: 20px;
      border: 1px solid grey;
@@ -53,6 +54,10 @@ body {
 .game-container .right-container .image-container img {
      width: 100%;
      margin-bottom: 50px;
+}
+
+.game-container .left-container .image-container img {
+     animation: shake  2.5s infinite ease-in-out forwards;
 }
 
 .game-container h3 {
@@ -94,6 +99,7 @@ body {
 
 .game-container .right-container .image-container img {
      transform: scaleX(-1);
+     animation: altShake  2.5s infinite ease-in-out forwards;
 }
 
 .countdown {
@@ -146,4 +152,18 @@ body {
 
 .modal h2 {
      color: var(--primary-color);
+}
+
+@keyframes shake {
+     0% { transform: rotate(0); }
+     25% { transform: rotate(-15deg); }
+     50% { transform: rotate(15deg); }
+     100% { transform: rotate(0); }
+}
+
+@keyframes altShake {
+     0% { transform: scaleX(-1) rotate(0); }
+     25% { transform: scaleX(-1) rotate(-15deg); }
+     50% { transform: scaleX(-1) rotate(15deg); }
+     100% { transform: scaleX(-1) rotate(0); }
 }
