@@ -51,12 +51,12 @@ function getComputerMove () {
      random_number = Math.floor((Math.random() * 10) + 1);
      console.log(random_number);
      //   CHECK IF THE NUMBER IS MORE THAN 2 OR NOT
-     while (random_number > 2) {
+     while (random_number > 3) {
           //   IF IT IS, CALL THE getComputerMove() FUNCTION
           getComputerMove();
      }
      //   GET THE MOVE FROM THE moves_list AT THE INDEX OF THE random_number
-     return moves_list[random_number];          
+     return moves_list[random_number - 1];          
 }
 
 //   FUNCTION WILL CHECK FOR A TIE AND A WINNER
